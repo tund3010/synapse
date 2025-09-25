@@ -1,4 +1,6 @@
 ## Install docker
+
+```sh
 sudo apt-get update
 sudo apt-get install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -10,6 +12,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo usermod -aG docker ${USER}
 docker ps
+```
 
 ## Build docker image
 ```sh
@@ -105,4 +108,5 @@ docker exec -it synapse register_new_matrix_user http://localhost:8008 -c /data/
 
 ```
 docker exec -it synapse register_new_matrix_user http://localhost:8008 -c /data/homeserver.yaml -u admin -p Abc@123456 -a
+
 ```
