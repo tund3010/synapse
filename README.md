@@ -21,6 +21,7 @@ docker build -t local-synapse -f docker/Dockerfile .
 
 ## Install postgres
 
+```sh
 sudo apt install -y postgresql-common && sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh	
 sudo apt install postgresql-17 postgresql-contrib-17 -y	
 sudo systemctl enable postgresql	
@@ -38,10 +39,12 @@ sudo nano /etc/postgresql/17/main/postgresql.conf
   listen_addresses = '*'
 
 sudo systemctl restart postgresql	
+```
 
 ## Create DB
-
+```sh
 createdb --encoding=UTF8 --locale=C --template=template0 --owner=synapse -U synapse -h localhost synapse-db
+```
 
 ## Generating a configuration file
 
@@ -110,3 +113,4 @@ docker exec -it synapse register_new_matrix_user http://localhost:8008 -c /data/
 docker exec -it synapse register_new_matrix_user http://localhost:8008 -c /data/homeserver.yaml -u admin -p Abc@123456 -a
 
 ```
+
