@@ -65,6 +65,7 @@ docker run -it --rm \
 
 ## Update configuration
 
+```
 sudo nano /var/lib/docker/volumes/synapse-data/_data/homeserver.yaml
   database:
     name: psycopg2
@@ -72,9 +73,10 @@ sudo nano /var/lib/docker/volumes/synapse-data/_data/homeserver.yaml
       user: synapse
       password: Abc@123456
       dbname: synapse-db
-      host: localhost
+      host: 172.17.0.1
       cp_min: 5
       cp_max: 10
+```
 
 ## Running synapse
 
@@ -113,4 +115,5 @@ docker exec -it synapse register_new_matrix_user http://localhost:8008 -c /data/
 docker exec -it synapse register_new_matrix_user http://localhost:8008 -c /data/homeserver.yaml -u admin -p Abc@123456 -a
 
 ```
+
 
